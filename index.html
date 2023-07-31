@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+  <body style="background-color: #efefef;">
+    <section style="background-color: #fff;
+                    width: 900px; 
+                    max-width: 100%;
+                    margin: 0 auto;">
+      <!--Top bar -->
+      <div id="topbar" style="padding: 16px; 
+                              display:flex; 
+                              justify-content: space-between;
+                              align-items: center;">
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0251/9325/0893/files/Logo.svg?v=1635433767" height="100px" alt="Gems and Jewels UK"/>
+        </div> 
+        <div>
+          <a href="https://www.ebay.co.uk/str/gemsandjewelsuk" style="padding: 10px 40px;
+                                                                      background-color: #002249;
+                                                                      color: #fff;
+                                                                      text-decoration: none;
+                                                                      "> View all listings</a>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <nav style="background-color: #002249;
+                  padding: 4px;">
+        <ul style="list-style-type: none;
+                   display:flex;
+                  justify-content: space-evenly;">
+       	  <!-- Store Home on Ebay-->
+          <li><a style="color: #fff;" href="https://www.ebay.co.uk/str/gemsandjewelsuk">Shop</a></li>
+          <!-- Ebay about -->
+          <li><a style="color: #fff;" href="https://www.ebay.co.uk/str/gemsandjewelsuk#tab1">About</a></li>
+          <!-- Ebay Feedback Page -->
+          <li><a style="color: #fff;" href="https://www.ebay.co.uk/str/gemsandjewelsuk#tab2">Feedback</a></li>
+          <!-- Ebay Send a message -->
+          <li><a style="color: #fff;" href="https://www.ebay.co.uk/contact/sendmsg?message_type_id=14&recipient=gemsandjewelsuk">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- Product Details -->
+      <div style="padding: 0 16px;">
+        <h1>{{ title }}</h1>
+        <div style="text-align:center;
+                    padding: 20px; 
+                    border: 1px solid #efefef;
+                    margin-bottom: 16px;">
+          
+          {% for image in images%}
+          <a><img style="filter: brightness(1.1);" src="{{ image | image_size:'250px' }}"></a>
+          {% endfor %}
+        </div>
+        <div data-element="productDescription" >
+            {{ description }}
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer style="color: #fff;
+                     background-color: #002249;
+                     padding: 16px;">
+        <p>© Gems and Jewels UK. All Rights Reserved.</p>
+      </footer>
+    </section>
+</body>
+
+</html>
